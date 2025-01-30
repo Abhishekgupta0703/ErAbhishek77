@@ -33,7 +33,6 @@ export const cloudProps: Omit<ICloud, "children"> = {
     outlineColour: "#0000",
     maxSpeed: 0.04,
     minSpeed: 0.02,
-    // dragControl: false,
   },
 }
 
@@ -52,7 +51,7 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
       href: undefined,
       target: undefined,
       rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
     },
   })
 }
@@ -80,7 +79,7 @@ export function IconCloud({ iconSlugs }: DynamicCloudProps) {
   }, [data, theme])
 
   return (
-    // @ts-expect-error
+    // @ts-expect-error: Cloud component types are not fully compatible with our props.
     <Cloud {...cloudProps}>
       <>{renderedIcons}</>
     </Cloud>

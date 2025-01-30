@@ -1,32 +1,25 @@
 "use client";
 
-import {
-  Github,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Youtube,
-  Facebook
-} from "lucide-react";
+import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { AnimatedSocialIcons } from "@/components/ui/floating-action-button";
 
 export function FloatingContact() {
   const socialIcons = [
     {
-      Icon: Github,
+      Icon: FaGithub,
       href: "https://github.com",
       className: "hover:bg-accent"
     },
     {
-      Icon: Twitter,
+      Icon: FaTwitter,
       href: "https://twitter.com"
     },
     {
-      Icon: Linkedin,
+      Icon: FaLinkedin,
       href: "https://linkedin.com"
     },
     {
-      Icon: Instagram,
+      Icon: FaInstagram,
       href: "https://instagram.com"
     }
   ];

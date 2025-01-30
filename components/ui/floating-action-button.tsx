@@ -1,12 +1,12 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Plus, LucideIcon } from "lucide-react";
+import { FaPlus } from "react-icons/fa";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface SocialIcon {
-  Icon: LucideIcon;
+  Icon: React.ElementType;  // Fixed Type
   href?: string;
   className?: string;
 }
@@ -23,7 +23,6 @@ export function AnimatedSocialIcons({
   iconSize = 20,
 }: AnimatedSocialIconsProps) {
   const [active, setActive] = useState(false);
-
   const buttonSize = "size-10 sm:size-16";
 
   return (
@@ -42,10 +41,9 @@ export function AnimatedSocialIcons({
           duration: 0.5,
         }}
       >
-        <Plus size={iconSize} strokeWidth={3} className="text-primary-foreground" />
+        <FaPlus size={iconSize} strokeWidth={3} className="text-primary-foreground" />
       </motion.button>
 
-    
       <motion.div
         className="absolute flex flex-col items-center gap-3 bottom-full mb-4"
         initial={false}
@@ -59,7 +57,6 @@ export function AnimatedSocialIcons({
           type: "spring",
           stiffness: 200,
           damping: 20,
-
         }}
       >
         {icons.map(({ Icon, href, className }, index) => (
@@ -72,7 +69,6 @@ export function AnimatedSocialIcons({
               "border border-border z-10",
               className
             )}
-            
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -83,16 +79,10 @@ export function AnimatedSocialIcons({
                 rel="noopener noreferrer"
                 className="flex items-center justify-center"
               >
-                <Icon
-                  size={iconSize}
-                  className="text-muted-foreground transition-all hover:text-foreground"
-                />
+                <Icon size={iconSize} className="text-muted-foreground transition-all hover:text-foreground" />
               </a>
             ) : (
-              <Icon
-                size={iconSize}
-                className="text-muted-foreground transition-all hover:text-foreground"
-              />
+              <Icon size={iconSize} className="text-muted-foreground transition-all hover:text-foreground" />
             )}
           </motion.div>
         ))}

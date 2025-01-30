@@ -6,7 +6,6 @@ import { useTheme } from "next-themes";
 import { Particles } from "@/components/ui/particles";
 import { IconCloud } from "@/components/ui/interactive-icon-cloud";
 import { SparklesText } from "./ui/sparkles-text";
-import { TiltCard } from "./TiltCard";
 import { HoverEffect } from "./ui/hover-effect";
 const slugs = [
   "typescript",

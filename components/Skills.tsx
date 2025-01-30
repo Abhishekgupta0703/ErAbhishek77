@@ -6,6 +6,8 @@ import { useTheme } from "next-themes";
 import { Particles } from "@/components/ui/particles";
 import { IconCloud } from "@/components/ui/interactive-icon-cloud";
 import { SparklesText } from "./ui/sparkles-text";
+import { TiltCard } from "./TiltCard";
+import { HoverEffect } from "./ui/hover-effect";
 const slugs = [
   "typescript",
   "javascript",
@@ -47,25 +49,15 @@ export function Skills() {
   }, [theme]);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black md:shadow-xl">
-        <SparklesText text="Skills" className="text-center my-14"/>
-      <div className="flex items-center justify-center gap-10">
-        <div className="relative flex size-full max-w-md items-center justify-center overflow-hidden px-20 pb-20 pt-8 ">
+    <div className="relative md:h-screen w-full overflow-hidden bg-black md:shadow-xl">
+      <SparklesText text="Skills" className="text-center my-14" />
+      <div className="flex flex-col items-center justify-center gap-2 md:gap-5 md:flex-row">
+        <div className="relative flex size-full max-w-md items-center justify-center overflow-hidden px-8 md:pl-32 md:pr-0 pb-10 md:pt-8 ">
           <IconCloud iconSlugs={slugs} />
         </div>
-        <div className="grid grid-cols-4 gap-8">
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
-          <div className="p-10 rounded-xl border">Please</div>
+        <div className="max-w-4xl mx-auto px-8">
+          <HoverEffect items={skill} />
+          
         </div>
       </div>
       <Particles
@@ -78,3 +70,41 @@ export function Skills() {
     </div>
   );
 }
+export const skill = [
+  {
+    title: "Web Development",
+    description:
+      "A technology company that builds economic infrastructure for the internet.",
+    link: "https://stripe.com"
+  },
+  {
+    title: "Web Development",
+    description:
+      "A technology company that builds economic infrastructure for the internet.",
+    link: "https://stripe.com"
+  },
+  {
+    title: "Web Development",
+    description:
+      "A technology company that builds economic infrastructure for the internet.",
+    link: "https://stripe.com"
+  },
+  {
+    title: "Web Development",
+    description:
+      "A technology company that builds economic infrastructure for the internet.",
+    link: "https://stripe.com"
+  },
+  {
+    title: "Web Development",
+    description:
+      "A technology company that builds economic infrastructure for the internet.",
+    link: "https://stripe.com"
+  },
+  {
+    title: "Web Development",
+    description:
+      "A technology company that builds economic infrastructure for the internet.",
+    link: "https://stripe.com"
+  },
+];

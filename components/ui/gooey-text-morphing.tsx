@@ -29,11 +29,17 @@ export function GooeyText({
 
     const setMorph = (fraction: number) => {
       if (text1Ref.current && text2Ref.current) {
-        text2Ref.current.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+        text2Ref.current.style.filter = `blur(${Math.min(
+          8 / fraction - 8,
+          100
+        )}px)`;
         text2Ref.current.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
         fraction = 1 - fraction;
-        text1Ref.current.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+        text1Ref.current.style.filter = `blur(${Math.min(
+          8 / fraction - 8,
+          100
+        )}px)`;
         text1Ref.current.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
       }
     };
@@ -75,7 +81,8 @@ export function GooeyText({
           textIndex = (textIndex + 1) % texts.length;
           if (text1Ref.current && text2Ref.current) {
             text1Ref.current.textContent = texts[textIndex % texts.length];
-            text2Ref.current.textContent = texts[(textIndex + 1) % texts.length];
+            text2Ref.current.textContent =
+              texts[(textIndex + 1) % texts.length];
           }
         }
         doMorph();
@@ -108,10 +115,17 @@ export function GooeyText({
         </defs>
       </svg>
 
-      <div
-        className=""
-        style={{ filter: "url(#threshold)" }}
-      >
+      <div className="relative" style={{ filter: "url(#threshold)" }}>
+        <span
+          className={cn(
+            "absolute bottom-1 -left-16 md:-left-20 inline-block select-none text-4xl md:text-[38pt] ml-20",
+            "text-foreground",
+            textClassName
+          )}
+        >
+          I&apos;m
+        </span>
+
         <span
           ref={text1Ref}
           className={cn(

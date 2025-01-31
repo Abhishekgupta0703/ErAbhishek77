@@ -8,7 +8,7 @@ export function Projects() {
     <div className="relative min-h-screen w-full overflow-hidden bg-black md:shadow-xl">
       <SparklesText text="Projects" className="text-center my-14" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-6 lg:px-32 px-4">
-        {project.map((p, i) => (
+        {project.map((p) => (
           <TiltCard
             key={p.id}
             title={p.title}

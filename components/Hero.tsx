@@ -2,13 +2,11 @@
 
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
-import { Spotlight } from "@/components/ui/spotlight";
 import { GooeyText } from "./ui/gooey-text-morphing";
 
 export function Hero() {
   return (
     <Card className="w-full h-[850px] md:h-[670px] bg-black/[0.96] relative overflow-hidden">
-      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" />
 
       <div className="flex h-full flex-col md:flex-row justify-center ">
         {/* Left content */}

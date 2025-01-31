@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react" // Import React
-import { Home, FileText, CreditCard, Info } from "lucide-react"
+import { Home,  CreditCard, Info } from "lucide-react"
 import { AnimeNavBar } from "@/components/ui/anime-navbar"
 
 const items = [
@@ -12,19 +12,25 @@ const items = [
     icon: Home,
   },
   {
-    name: "Convert",
+    name: "About",
     url: "#",
     href: "#",
-    icon: FileText,
+    icon: Info,
   },
   {
-    name: "Pricing",
+    name: "Skills",
     url: "#",
     href: "#",
     icon: CreditCard,
   },
   {
-    name: "About",
+    name: "Projects",
+    url: "#",
+    href: "#",
+    icon: Info,
+  },
+  {
+    name: "Contacts",
     url: "#",
     href: "#",
     icon: Info,

@@ -39,7 +39,7 @@ export const LinkPreview = ({
   let src;
   if (!isStatic) {
     const params = encode({
-      url,
+      url: `https://${url.replace(/^https?:\/\//, "")}`, // Ensure it's an absolute URL
       screenshot: true,
       meta: false,
       embed: "screenshot.url",
@@ -49,10 +49,11 @@ export const LinkPreview = ({
       "viewport.width": width * 3,
       "viewport.height": height * 3,
     });
-    src = `https://api.microlink.io/?${params}`;
+    src = `${params}`;
   } else {
-    src = imageSrc;
+    src = imageSrc.startsWith("/") ? imageSrc : `/${imageSrc}`;
   }
+  
 
   const [isOpen, setOpen] = React.useState(false);
 

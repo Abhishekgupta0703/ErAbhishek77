@@ -16,6 +16,7 @@ export function Projects() {
             img={p.img}
             live={p.live}
             github={p.git}
+            imgclass="h-48"
           />
         ))}
       </div>

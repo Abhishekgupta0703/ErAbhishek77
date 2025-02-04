@@ -7,13 +7,15 @@ function TiltCard({
   title,
   desc,
   live,
-  github
+  github,
+  imgclass
 }: {
   img?: string;
   title?: string;
   desc?: string;
   live?: string;
   github?: string;
+  imgclass?: string;
 }) {
   return (
     <Tilt rotationFactor={8} isRevese>
@@ -23,25 +25,39 @@ function TiltCard({
         }}
         className="flex relative flex-col overflow-hidden border-2 border-zinc-900 "
       >
-        <img src={img} alt={title} className="h-48 w-full object-cover brightness-90" />
+        <img
+          src={img}
+          alt={title}
+          className= {` w-full object-cover brightness-90 ${imgclass}`}
+        />
         <div className="text-center relative pt-1 pb-2">
-          <h1 className="font-bold text-xl text-zinc-950 dark:text-zinc-50 mb-1">
-            {title}
-          </h1>
-          <p className="text-zinc-700 dark:text-zinc-500 text-sm px-2">{desc}</p>
+          {title && (
+            <h1 className="font-bold text-xl text-zinc-950 dark:text-zinc-50 mb-1">
+              {title}
+            </h1>
+          )}
+          {desc && (
+            <p className="text-zinc-700 dark:text-zinc-500 text-sm px-2">
+              {desc}
+            </p>
+          )}
           <div className="absolute flex justify-between items-center w-full top-0">
-            <a
-              href={live}
-              className="px-2 py-1.5 flex justify-center items-center gap-2 rounded-lg cursor-pointer"
-            >
-              <CiLocationArrow1 size={24} fill="yellow"/>
-            </a>
-            <a
-              href={github}
-              className="px-2 py-1.5 flex justify-center items-center gap-2 rounded-lg cursor-pointer"
-            >
-              <FaGithub size={24} fill="purple"/>
-            </a>
+            {live && (
+              <a
+                href={live}
+                className="px-2 py-1.5 flex justify-center items-center gap-2 rounded-lg cursor-pointer"
+              >
+                <CiLocationArrow1 size={24} fill="yellow" />
+              </a>
+            )}
+            {github && (
+              <a
+                href={github}
+                className="px-2 py-1.5 flex justify-center items-center gap-2 rounded-lg cursor-pointer text-[]"
+              >
+                <FaGithub size={24} fill="#9a27cb" />
+              </a>
+            )}
           </div>
         </div>
       </div>
